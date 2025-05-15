@@ -3,66 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Рикки</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Рикки — твой виртуальный друг</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="app">
-        <div class="main-screen">
-            <header>
-                <h1>Рикки</h1>
-                <div class="stats">
-                    <p>Здоровье: <span id="health">100%</span></p>
+    <div class="game-container">
+        <header>
+            <h1>Привет, я Рикки! 🦝</h1>
+        </header>
+        <main>
+            <div class="room">
+                <svg id="ricky-animation"> 
+                    <!-- SVG-анимация персонажа -->
+                </svg>
+                <div id="status">
                     <p>Энергия: <span id="energy">100%</span></p>
+                    <p>Здоровье: <span id="health">100%</span></p>
                     <p>Звезды: <span id="stars">10</span></p>
                 </div>
-            </header>
-            <div class="room">
-                <svg id="ricky" class="ricky-svg" viewBox="0 0 200 200">
-                    <!-- SVG model of Ricky -->
-                    <circle cx="100" cy="100" r="50" fill="#A3D9A5"/>
-                    <circle cx="85" cy="85" r="5" fill="#fff" />
-                    <circle cx="115" cy="85" r="5" fill="#fff" />
-                    <path d="M80 110 Q100 130 120 110" stroke="#fff" fill="none"/>
-                </svg>
+                <div class="buttons">
+                    <button onclick="feedRicky()">🍎 Кормить</button>
+                    <button onclick="putToSleep()">😴 Спать</button>
+                    <button onclick="playGames()">🎮 Играть</button>
+                    <button onclick="openHomework()">📚 Домашнее задание</button>
+                </div>
             </div>
-            <nav>
-                <button onclick="openHomework()">Домашнее задание</button>
-                <button onclick="openStore()">Магазин</button>
-                <button onclick="startGame()">Игры</button>
-                <button onclick="rickySleep()">Сон</button>
-            </nav>
-        </div>
-
-        <!-- Homework Section -->
-        <div id="homework-section" class="hidden">
-            <h2>Домашнее задание</h2>
-            <p id="homework-text">Пример задания для выполнения</p>
-            <button onclick="setReminder()">Напомнить</button>
-            <button onclick="completeHomework()">Задание выполнено</button>
-            <button onclick="goBack()">Назад</button>
-        </div>
-
-        <!-- Store Section -->
-        <div id="store-section" class="hidden">
-            <h2>Магазин</h2>
-            <div class="categories">
-                <h3>Еда</h3>
-                <button onclick="buyFood('berry', 1)">Ягода (1 звезда)</button>
-                <button onclick="buyFood('nut', 2)">Орех (2 звезды)</button>
-            </div>
-            <div class="categories">
-                <h3>Мебель</h3>
-                <button onclick="buyItem('bed', 3)">Кровать (3 звезды)</button>
-            </div>
-            <div class="categories">
-                <h3>Одежда</h3>
-                <button onclick="buyItem('clothes', 5)">Римская одежда (5 звезд)</button>
-            </div>
-            <button onclick="goBack()">Назад</button>
-        </div>
-
+        </main>
     </div>
     <script src="script.js"></script>
+    <script src="homework.js"></script>
 </body>
 </html>
